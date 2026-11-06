@@ -1,0 +1,3 @@
+.detail-image { display: block; width: 100%; margin-top: 16rpx; border-radius: 12rpx; background: #e8eff3; }
+.detail-actions { margin-top: 32rpx; }
+.detail-actions .primary-btn { width: 100%; }

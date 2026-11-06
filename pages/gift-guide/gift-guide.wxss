@@ -1,0 +1,22 @@
+.guide-page { padding-bottom: 64rpx; }
+.eyebrow { color: #967330; font-size: 23rpx; font-weight: 600; letter-spacing: 0; }
+.title { margin-top: 12rpx; }
+.loading-panel { display: flex; align-items: center; gap: 24rpx; }
+.loading-dot { width: 20rpx; height: 20rpx; flex: 0 0 20rpx; border-radius: 50%; background: #5a7d9a; }
+.loading-panel .section-title { margin-bottom: 6rpx; }
+.card-preview { width: 100%; max-width: 600rpx; margin-left: auto; margin-right: auto; overflow: hidden; border-radius: 12rpx; background: #e8eff3; }
+.preview-image { display: block; width: 100%; height: auto; }
+.insight-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12rpx; }
+.insight-heading .section-title { margin-bottom: 0; }
+.insight-copy { margin-top: 16rpx; color: #425f74; font-size: 27rpx; line-height: 1.7; }
+.field-row { display: flex; gap: 18rpx; }
+.compact-field { flex: 1; min-width: 0; margin-top: 0; }
+.age-field { flex: 0 0 180rpx; }
+.blessing-input { height: 166rpx; }
+.blessing-list { display: flex; flex-direction: column; gap: 12rpx; }
+.blessing-chip { display: flex; align-items: flex-start; gap: 14rpx; padding: 20rpx; border: 1rpx solid #d5e1e8; border-radius: 12rpx; background: #fff; color: #425f74; font-size: 27rpx; line-height: 1.6; }
+.blessing-chip.active { border-color: #5a7d9a; background: #e8eff3; color: #0d2b45; }
+.radio { width: 28rpx; height: 28rpx; flex: 0 0 28rpx; margin-top: 8rpx; border: 2rpx solid #9cabb5; border-radius: 50%; }
+.active .radio { border: 8rpx solid #5a7d9a; background: #fff; }
+.retry-btn { margin-top: 18rpx; }
+.image-pending { display: flex; height: 500rpx; align-items: center; justify-content: center; color: #5a7d9a; }

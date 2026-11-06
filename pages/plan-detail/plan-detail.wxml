@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="title">推荐详情</view>
+  <view class="subtitle">价格、优惠和配送以商品页面为准</view>
+
+  <view class="section">
+    <product-recommend-card product="{{product}}" expanded="{{true}}"></product-recommend-card>
+  </view>
+
+  <view class="section panel" wx:if="{{detail.detailImages.length}}">
+    <view class="section-title">商品主图</view>
+    <image wx:for="{{detail.detailImages}}" wx:key="*this" class="detail-image" src="{{item}}" mode="widthFix"></image>
+  </view>
+
+  <view class="detail-actions">
+    <button class="primary-btn" bindtap="openProduct">打开商品页</button>
+    <view class="btn-row">
+      <button class="ghost-btn" bindtap="copyLink"><image class="icon" src="/assets/icons/copy.png"></image>复制链接</button>
+      <button class="ghost-btn" bindtap="savePlan"><image class="icon" src="/assets/icons/bookmark.png"></image>保存方案</button>
+    </view>
+  </view>
+</view>

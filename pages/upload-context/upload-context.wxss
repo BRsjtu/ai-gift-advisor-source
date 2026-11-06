@@ -1,0 +1,6 @@
+.image-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16rpx; margin-top: 20rpx; }
+.image-box, .add-box { position: relative; height: 240rpx; border-radius: 12rpx; overflow: hidden; background: #e8eff3; }
+.image-box image { width: 100%; height: 100%; }
+.add-box { display: flex; flex-direction: column; gap: 16rpx; align-items: center; justify-content: center; border: 1rpx dashed #5a7d9a; color: #425f74; font-size: 27rpx; }
+.remove { position: absolute; right: 10rpx; top: 10rpx; width: 52rpx; height: 52rpx; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #244d6d; }
+.remove image { width: 30rpx; height: 30rpx; }

@@ -1,0 +1,13 @@
+.profile-heading { display: flex; align-items: center; justify-content: space-between; gap: 20rpx; }
+.profile-mark { width: 68rpx; height: 68rpx; flex: 0 0 68rpx; }
+.form-group { padding: 32rpx 0; border-bottom: 1rpx solid #dce5ea; }
+.group-title { display: flex; align-items: center; gap: 14rpx; font-size: 31rpx; font-weight: 600; color: #0d2b45; }
+.group-number { color: #967330; font-size: 23rpx; font-weight: 400; }
+.picker-input-row { display: flex; gap: 16rpx; }
+.field-picker { flex: 1; min-width: 0; }
+.select-input { display: flex; align-items: center; justify-content: space-between; height: 86rpx; padding: 0 22rpx; border: 1rpx solid #d5e1e8; border-radius: 12rpx; background: #fff; color: #0d2b45; }
+.select-arrow { width: 30rpx; height: 30rpx; }
+.compact-input { width: 210rpx; flex-shrink: 0; }
+.custom-input { margin-top: 16rpx; }
+.interest-chips { gap: 12rpx; }
+.interest-chips .chip { border-radius: 999rpx; }

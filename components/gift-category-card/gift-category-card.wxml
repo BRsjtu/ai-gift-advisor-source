@@ -1,0 +1,22 @@
+<view class="category-card" bindtap="onTap" hover-class="pressed">
+  <view class="main">
+    <view class="copy">
+      <view class="name">{{category.name}}</view>
+      <view class="reason">{{category.reason}}</view>
+    </view>
+    <view class="visual">
+      <image wx:if="{{category.illustration.path}}" class="illustration" src="{{category.illustration.path}}" mode="aspectFit"></image>
+      <view wx:else class="image-state"><image class="state-icon" src="/assets/icons/image.png"></image><text>{{category.illustration.status === 'failed' ? '配图失败' : '配图生成中'}}</text></view>
+      <view wx:if="{{category.illustration.path}}" class="image-label">AI 示意图</view>
+    </view>
+  </view>
+  <view wx:if="{{category.budgetFit}}" class="fit">{{category.budgetFit}}</view>
+  <view wx:if="{{category.risk}}" class="risk"><text class="risk-label">留意</text>{{category.risk}}</view>
+  <view class="footer">
+    <view class="keywords"><text wx:for="{{category.keywords}}" wx:key="*this" class="keyword">{{item}}</text></view>
+    <image class="next-icon" src="/assets/icons/arrow-right.png"></image>
+  </view>
+  <view wx:if="{{category.illustration.error}}" class="image-error">
+    <text>{{category.illustration.error}}</text><button class="retry" catchtap="onRetry">重试配图</button>
+  </view>
+</view>

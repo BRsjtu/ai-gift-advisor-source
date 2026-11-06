@@ -1,0 +1,80 @@
+<view class="page">
+  <view class="profile-heading"><view><view class="title">这份心意，送给谁？</view><view class="subtitle">从了解 TA 开始</view></view><image class="profile-mark" src="/assets/icons/gift-gold.png"></image></view>
+
+  <view class="form-group">
+    <view class="group-title"><text class="group-number">01</text>关于 TA</view>
+    <view class="field">
+      <view class="field-label">关系</view>
+      <view class="chip-row">
+        <view wx:for="{{relationOptions}}" wx:key="*this" class="chip {{form.relation === item ? 'active' : ''}}" data-field="relation" data-value="{{item}}" bindtap="chooseChip">{{item}}</view>
+      </view>
+    </view>
+
+    <view class="field">
+      <view class="field-label">送礼场景</view>
+      <view class="chip-row">
+        <view wx:for="{{occasionOptions}}" wx:key="*this" class="chip {{form.occasion === item ? 'active' : ''}}" data-field="occasion" data-value="{{item}}" bindtap="chooseChip">{{item}}</view>
+      </view>
+    </view>
+
+    <view class="field">
+      <view class="field-label">性别</view>
+      <view class="chip-row">
+        <view wx:for="{{genderOptions}}" wx:key="*this" class="chip {{form.gender === item ? 'active' : ''}}" data-field="gender" data-value="{{item}}" bindtap="chooseChip">{{item}}</view>
+      </view>
+    </view>
+
+    <view class="field">
+      <view class="field-label">亲密度</view>
+      <view class="chip-row">
+        <view wx:for="{{closenessOptions}}" wx:key="*this" class="chip {{form.closeness === item ? 'active' : ''}}" data-field="closeness" data-value="{{item}}" bindtap="chooseChip">{{item}}</view>
+      </view>
+    </view>
+
+    <view class="field">
+      <view class="field-label">年龄</view>
+      <view class="picker-input-row">
+        <picker class="field-picker" mode="selector" range="{{ageOptions}}" value="{{ageIndex}}" bindchange="chooseAge">
+          <view class="select-input">{{form.age || '选择年龄'}} <image class="select-arrow" src="/assets/icons/chevron-down.png"></image></view>
+        </picker>
+        <input class="input compact-input" type="number" value="{{customAge}}" bindinput="inputAge" placeholder="手动填写" />
+      </view>
+    </view>
+
+  </view>
+  <view class="form-group">
+    <view class="group-title"><text class="group-number">02</text>这次的礼物</view>
+    <view class="field">
+      <view class="field-label">预算</view>
+      <view class="chip-row">
+        <view wx:for="{{budgetOptions}}" wx:key="*this" class="chip {{form.budget === item ? 'active' : ''}}" data-field="budget" data-value="{{item}}" bindtap="chooseChip">{{item}}</view>
+      </view>
+      <input class="input custom-input" value="{{customBudget}}" bindinput="inputBudget" placeholder="也可以自定义，如 100-300 元" />
+    </view>
+
+    <view class="field">
+      <view class="field-label">优先搜索平台</view>
+      <view class="chip-row">
+        <view wx:for="{{platformOptions}}" wx:key="value" class="chip {{form.platformPreference === item.value ? 'active' : ''}}" data-field="platformPreference" data-value="{{item.value}}" bindtap="chooseChip">{{item.label}}</view>
+      </view>
+    </view>
+
+  </view>
+  <view class="form-group">
+    <view class="group-title"><text class="group-number">03</text>TA 的偏好<text class="optional">选填</text></view>
+    <view class="field">
+      <view class="field-label">兴趣或风格</view>
+      <view class="chip-row interest-chips">
+        <view wx:for="{{interestOptions}}" wx:key="*this" class="chip {{selectedInterests[item] ? 'active' : ''}}" data-value="{{item}}" bindtap="toggleInterest">{{item}}</view>
+      </view>
+      <input class="input custom-input" value="{{customInterests}}" bindinput="inputInterests" placeholder="补充其他兴趣，如咖啡、露营、极简风" />
+    </view>
+
+    <view class="field">
+      <view class="field-label">禁忌</view>
+      <textarea class="textarea" value="{{form.taboo}}" data-field="taboo" bindinput="inputField" placeholder="例如：不吃甜食、不喜欢香味、不能太贵、不能太私人"></textarea>
+    </view>
+
+  </view>
+  <button class="primary-btn section" bindtap="next">下一步：补充资料<image class="icon" src="/assets/icons/arrow-right-white.png"></image></button>
+</view>

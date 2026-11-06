@@ -1,0 +1,4 @@
+.history-list { display: flex; flex-direction: column; gap: 20rpx; }
+.history-item { padding: 26rpx; border: 1rpx solid #dce5ea; border-radius: 16rpx; background: #fff; }
+.item-title { margin-bottom: 14rpx; color: #0d2b45; font-size: 31rpx; font-weight: 600; }
+.item-footer { margin-top: 20rpx; padding-top: 16rpx; border-top: 1rpx solid #e6edf1; color: #5a7d9a; font-size: 23rpx; }

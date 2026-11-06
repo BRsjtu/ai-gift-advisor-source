@@ -1,0 +1,17 @@
+.home-page { padding: 0 0 40rpx; }
+.hero { position: relative; height: 560rpx; overflow: hidden; }
+.hero-image-layer { position: absolute; width: 100%; height: 100%; }
+.hero-copy { position: relative; padding: 48rpx 36rpx; }
+.eyebrow { color: #425f74; font-size: 24rpx; }
+.hero-title { margin-top: 26rpx; width: 50%; font-size: 60rpx; line-height: 1.35; font-weight: 600; color: #0d2b45; }
+.hero-subtitle { margin-top: 22rpx; width: 46%; font-size: 26rpx; line-height: 1.7; color: #425f74; }
+.home-content { padding: 28rpx 32rpx; }
+.history-entry { margin-top: 18rpx; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 20rpx; margin-bottom: 18rpx; }
+.section-heading .section-title { margin: 0; }
+.text-btn { color: #5a7d9a; font-size: 25rpx; }
+.recent-panel { display: flex; align-items: center; gap: 18rpx; padding: 24rpx 0; border-top: 1rpx solid #dce5ea; border-bottom: 1rpx solid #dce5ea; }
+.recent-mark { width: 56rpx; height: 56rpx; flex: 0 0 56rpx; }
+.recent-content { flex: 1; min-width: 0; }
+.recent-title { margin-bottom: 8rpx; color: #0d2b45; font-size: 28rpx; font-weight: 600; }
+.recent-content .muted { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 25rpx; }

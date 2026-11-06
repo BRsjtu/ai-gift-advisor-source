@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/profile/profile",
+    "pages/gift-guide/gift-guide",
+    "pages/history/history",
+    "pages/upload-context/upload-context",
+    "pages/category-result/category-result",
+    "pages/product-result/product-result",
+    "pages/plan-detail/plan-detail"
+  ],
+  "window": {
+    "navigationBarTitleText": "AI 礼物",
+    "navigationBarBackgroundColor": "#f4f6f6",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f4f6f6"
+  },
+  "tabBar": {
+    "color": "#617586",
+    "selectedColor": "#244d6d",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/history/history",
+        "text": "历史",
+        "iconPath": "assets/tab-history.png",
+        "selectedIconPath": "assets/tab-history-active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/tab-gift.png",
+        "selectedIconPath": "assets/tab-gift-active.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "touristappid"
+  ],
+  "usingComponents": {
+    "profile-summary-card": "/components/profile-summary-card/profile-summary-card",
+    "gift-category-card": "/components/gift-category-card/gift-category-card",
+    "product-recommend-card": "/components/product-recommend-card/product-recommend-card"
+  },
+  "renderer": "webview",
+  "sitemapLocation": "sitemap.json"
+}

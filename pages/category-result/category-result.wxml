@@ -1,0 +1,18 @@
+<view class="page">
+  <view class="title">先选礼物方向</view>
+  <view class="subtitle">为 TA 挑一份刚刚好的心意</view>
+
+  <view class="section">
+    <profile-summary-card profile="{{plan.profile}}"></profile-summary-card>
+  </view>
+
+  <view class="section list">
+    <view class="section-title">礼物灵感 <text class="optional">{{categories.length}} 个方向</text></view>
+    <gift-category-card wx:for="{{categories}}" wx:key="id" category="{{item}}" bind:select="selectCategory" bind:retry="retryIllustration"></gift-category-card>
+  </view>
+
+  <view class="section panel" wx:if="{{error}}">
+    <view class="section-title">接口错误</view>
+    <view class="muted error-text">{{error}}</view>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<view class="page">
+  <view class="title">补一点真实线索</view>
+  <view class="subtitle">聊天、朋友圈、喜欢的事物<text class="optional">选填</text></view>
+
+  <view class="section panel">
+    <view class="section-title">补充文字</view>
+    <textarea class="textarea" value="{{extraText}}" bindinput="inputExtra" placeholder="例如：TA 最近在看咖啡器具、喜欢简洁包装、刚搬家"></textarea>
+  </view>
+
+  <view class="section panel">
+    <view class="section-title">图片线索</view>
+    <view class="muted">{{images.length}} / 4 张</view>
+    <view class="image-grid">
+      <view wx:for="{{images}}" wx:key="path" class="image-box">
+        <image src="{{item.path}}" mode="aspectFill"></image>
+        <view class="remove" data-index="{{index}}" bindtap="removeImage" aria-label="删除图片"><image src="/assets/icons/x-white.png"></image></view>
+      </view>
+      <view wx:if="{{images.length < 4}}" class="add-box" bindtap="addImage"><image class="icon" src="/assets/icons/plus.png"></image>添加图片</view>
+    </view>
+  </view>
+
+  <view class="section panel" wx:if="{{error}}">
+    <view class="section-title">接口错误</view>
+    <view class="muted error-text">{{error}}</view>
+  </view>
+
+  <button class="primary-btn section" loading="{{loading}}" bindtap="generate">生成送礼画像</button>
+</view>

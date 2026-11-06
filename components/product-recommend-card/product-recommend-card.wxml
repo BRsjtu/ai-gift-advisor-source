@@ -1,0 +1,14 @@
+<view class="product-card {{expanded ? 'expanded' : ''}}" bindtap="onTap">
+  <view class="product-main">
+    <image wx:if="{{product.imageUrl}}" class="cover" src="{{product.imageUrl}}" mode="aspectFit"></image>
+    <view wx:else class="cover fallback">暂无主图</view>
+    <view class="info">
+      <view class="platform">{{product.platform || '京东'}}</view>
+      <view class="product-title">{{product.title}}</view>
+      <view class="price">{{product.priceText || '价格以商品页为准'}}</view>
+      <view wx:if="{{product.budgetMatch.label}}" class="budget-status budget-{{product.budgetMatch.status}}">{{product.budgetMatch.label}}</view>
+    </view>
+  </view>
+  <view wx:if="{{product.reason}}" class="reason">{{product.reason}}</view>
+  <view wx:if="{{product.risk}}" class="risk">{{product.risk}}</view>
+</view>

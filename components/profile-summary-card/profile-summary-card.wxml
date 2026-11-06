@@ -1,0 +1,26 @@
+<view class="profile-card">
+  <view class="card-head">
+    <view>
+      <view class="label">送礼画像</view>
+      <view class="summary">{{profile.summary || '还没有生成画像'}}</view>
+    </view>
+  </view>
+  <view class="meta-grid">
+    <view class="meta-item">
+      <view class="meta-label">兴趣线索</view>
+      <view wx:for="{{interestPoints}}" wx:key="*this" class="point"><text class="bullet">•</text><text>{{item}}</text></view>
+    </view>
+    <view class="meta-item">
+      <view class="meta-label">适合风格</view>
+      <view wx:for="{{stylePoints}}" wx:key="*this" class="point"><text class="bullet">•</text><text>{{item}}</text></view>
+    </view>
+    <view class="meta-item">
+      <view class="meta-label">关系边界</view>
+      <view wx:for="{{boundaryPoints}}" wx:key="*this" class="point"><text class="bullet">•</text><text>{{item}}</text></view>
+    </view>
+    <view class="meta-item">
+      <view class="meta-label">避雷</view>
+      <view wx:for="{{riskPoints}}" wx:key="*this" class="point"><text class="bullet">•</text><text>{{item}}</text></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+<view class="page home-page">
+  <view class="hero">
+    <image class="hero-image-layer" src="/assets/home-blue-gifts.jpg" mode="aspectFill"></image>
+    <view class="hero-copy">
+      <view class="eyebrow">一份礼物，一份心意</view>
+      <view class="hero-title"><view>送礼物</view><view>不纠结</view></view>
+      <view class="hero-subtitle"><view>愿每一份用心</view><view>都刚好被喜欢</view></view>
+    </view>
+  </view>
+  <view class="home-content">
+    <button class="primary-btn" bindtap="start">开始选礼物 <image class="icon" src="/assets/icons/arrow-right-white.png"></image></button>
+    <button class="ghost-btn history-entry" bindtap="openHistory"><image class="icon" src="/assets/tab-history-active.png"></image>历史记录</button>
+    <view class="section recent-section" wx:if="{{lastPlan.id}}">
+      <view class="section-heading"><view class="section-title">最近的心意</view><button class="text-btn" bindtap="openLast">继续查看</button></view>
+      <view class="recent-panel" bindtap="openLast">
+        <image class="recent-mark" src="/assets/icons/gift.png"></image>
+        <view class="recent-content">
+          <view class="recent-title">{{lastPlan.draft.relation || '收礼人'}} · {{lastPlan.draft.occasion || '送礼场景'}}</view>
+          <view class="muted">{{lastPlan.profile.summary}}</view>
+        </view>
+        <image class="icon" src="/assets/icons/arrow-right.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

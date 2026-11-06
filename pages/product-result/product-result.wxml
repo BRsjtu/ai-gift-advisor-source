@@ -1,0 +1,20 @@
+<view class="page">
+  <view class="title">{{plan.selectedCategory.name || '商品候选'}}</view>
+  <view class="subtitle">优先{{platformText}} · 价格以商品页面为准</view>
+  <view wx:if="{{searchSummary}}" class="search-summary">{{searchSummary}}</view>
+
+  <view class="section panel" wx:if="{{loading}}">
+    <view class="section-title">{{products.length ? '正在补充候选' : '正在搜索真实商品'}}</view>
+    <view class="muted">{{searchStage}}</view>
+  </view>
+
+  <view class="section panel" wx:if="{{error}}">
+    <view class="section-title">暂未完成商品检索</view>
+    <view class="muted error-text">{{error}}</view>
+    <button class="ghost-btn" bindtap="retrySearch">重新搜索</button>
+  </view>
+
+  <view class="section product-list">
+    <product-recommend-card wx:for="{{products}}" wx:key="id" product="{{item}}" bind:open="openProduct"></product-recommend-card>
+  </view>
+</view>

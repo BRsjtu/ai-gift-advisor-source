@@ -1,0 +1,18 @@
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.error-text {
+  color: #b7342f;
+}
+
+.search-summary {
+  margin-top: 20rpx;
+  padding: 18rpx 0;
+  border-top: 1rpx solid #dce5ea;
+  color: #72571e;
+  font-size: 25rpx;
+  line-height: 1.65;
+}

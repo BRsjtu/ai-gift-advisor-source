@@ -1,0 +1,60 @@
+<view class="page guide-page">
+  <view class="eyebrow">AI 送礼卡片</view>
+  <view class="title">把心意写进礼物里</view>
+  <view class="subtitle">给 TA 的专属祝福</view>
+
+  <view class="section panel loading-panel" wx:if="{{loading}}">
+    <view class="loading-dot"></view>
+    <view>
+      <view class="section-title">正在生成礼物卡片</view>
+      <view class="muted">正在绘制画作与祝福语</view>
+    </view>
+  </view>
+
+  <view class="section card-preview" wx:if="{{guide.motto}}">
+    <image wx:if="{{guide.imageUrl}}" class="preview-image" src="{{guide.imageUrl}}" mode="widthFix"></image>
+    <view wx:else class="preview-image image-pending">礼物卡片</view>
+  </view>
+
+  <view class="section panel insight-panel" wx:if="{{guide.guide}}">
+    <view class="insight-heading">
+      <view class="section-title">送礼思路</view>
+    </view>
+    <view class="insight-copy">{{guide.guide}}</view>
+  </view>
+
+  <view class="section panel editor-panel" wx:if="{{guide.motto}}">
+    <view class="section-title">写下专属信息 <text class="optional">选填</text></view>
+    <view class="field-row">
+      <view class="field compact-field">
+        <view class="field-label">TA 的称呼</view>
+        <input class="input" maxlength="12" value="{{recipientName}}" placeholder="例如：小雨" bindinput="onNameInput" />
+      </view>
+      <view class="field compact-field age-field">
+        <view class="field-label">年龄</view>
+        <input class="input" type="number" maxlength="3" value="{{recipientAge}}" placeholder="例如：25" bindinput="onAgeInput" />
+      </view>
+    </view>
+    <view class="field">
+      <view class="field-label">推荐祝福语</view>
+      <view class="blessing-list">
+        <view wx:for="{{guide.blessings}}" wx:key="*this" class="blessing-chip {{selectedBlessing === item ? 'active' : ''}}" data-blessing="{{item}}" bindtap="selectBlessing"><view class="radio"></view><text>{{item}}</text></view>
+      </view>
+    </view>
+    <view class="field">
+      <view class="field-label">自己写一句</view>
+      <textarea class="textarea blessing-input" maxlength="60" value="{{customBlessing}}" placeholder="例如：愿你每天都被喜欢的事照亮" bindinput="onBlessingInput"></textarea>
+    </view>
+    <view class="btn-row action-row">
+      <button class="ghost-btn" loading="{{saving}}" bindtap="previewCard">{{saving ? '正在生成' : '预览卡片'}}</button>
+      <button class="primary-btn" loading="{{saving}}" bindtap="saveToAlbum"><image wx:if="{{!saving}}" class="icon" src="/assets/icons/download-white.png"></image>保存卡片</button>
+    </view>
+  </view>
+
+  <view class="section panel" wx:if="{{error}}">
+    <view class="section-title">需要再试一次</view>
+    <view class="muted error-text">{{error}}</view>
+    <button class="ghost-btn retry-btn" bindtap="createGuide">重试生成</button>
+  </view>
+  <button wx:if="{{guide.motto}}" class="primary-btn section products-btn" bindtap="openProducts">查看商品候选</button>
+</view>
